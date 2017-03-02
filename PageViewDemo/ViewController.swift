@@ -8,12 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIPageViewControllerDataSource {
+class ViewController: UIViewController,
+                        UIPageViewControllerDataSource {
 
     var pageController : UIPageViewController!
     var pageContent = [String]()
     
-    
+// MARK:- App Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.createContentPages()
@@ -56,6 +57,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
         return controller
     }
     
+// MARK:- UIPageViewControllerDataSource
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         
         var index = self.index(ofAccessibilityElement: viewController)
